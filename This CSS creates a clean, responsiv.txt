@@ -1,0 +1,208 @@
+This CSS creates a clean, responsive photo gallery website with a header, navigation bar, 
+main content area, grid-based gallery, and footer. It adapts nicely 
+to tablets and mobile screens.
+
+
+
+
+* targets all elements.
+
+Removes default browser margins/padding for consistency.
+
+box-sizing: border-box makes width/height calculations easier (padding and 
+borders are included inside the set width/height).
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+I. Sets a clean font (Arial).
+
+ii. Light gray background.
+
+iii. Dark gray text for readability
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+
+I. Dark blue background with white text.
+
+ii. Centered content.
+
+iii. Generous padding for spacing.
+
+iv. The h1 inside gets a large font size (40px) and spacing below
+
+
+/* Header */
+
+header {
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+I. Black/dark gray bar with centered links.
+
+ii. Links are white, spaced evenly.
+
+iii. On hover, links turn light blue for interactivity
+/* Navigation */
+
+nav {
+    background: #222;
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+I. Restricts content width to 1200px (good for readability).
+
+ii. Centers content with margin: auto.
+
+iii. Section titles (h2) are large and centered.
+
+
+/* Main */
+
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+I. Uses CSS Grid.
+
+ii. 3 equal-width columns (1fr each).
+
+iii. 25px gap between items.
+
+
+/* Gallery */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+I. White card with rounded corners and shadow.
+
+ii. Hover effect: card lifts slightly (translateY(-5px)).
+
+iii. Images fill the card, cropped nicely with object-fit: cover.
+
+iv. Titles (h3) centered below the image
+
+
+/* Individual photo */
+
+.photo {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s;
+}
+
+.photo:hover {
+    transform: translateY(-5px);
+}
+
+.photo img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.photo h3 {
+    text-align: center;
+    padding: 15px;
+}
+
+I. Dark footer with white text.
+
+ii. Centered content and spacing.
+
+
+/* Footer */
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+I.  Gallery shrinks to 2 columns.
+/* Tablet */
+
+@media (max-width: 800px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+I. Smaller header text, stacked navigation links, single-column gallery, taller images.
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo img {
+        height: 280px;
+    }
+
+}

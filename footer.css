@@ -1,0 +1,13 @@
+/* Footer styling */
+.site-footer {
+  background-color: #333;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px; /* adds space above footer */
+}
+
+/* Ensure footer is NOT fixed */
+.site-footer {
+  position: static; /* default, ensures it flows naturally */
+}
